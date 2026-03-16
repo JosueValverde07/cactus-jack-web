@@ -1,0 +1,307 @@
+/* VARIABLES */
+:root {
+    --bg-dark: #050505;
+    --cactus-red: #ff3c00;
+    --cactus-brown: #4d3a2b;
+    --card-bg: #111111;
+    --text-white: #ffffff;
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--cactus-brown);
+}
+
+.logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--cactus-red);
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li { margin-left: 25px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--cactus-red); }
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), 
+                url('img/background2.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(3rem, 12vw, 8rem);
+    letter-spacing: 10px;
+    animation: neonGlow 2s infinite alternate;
+
+}   
+
+}
+@keyframes neonGlow {
+    from { text-shadow: 0 0 10px rgba(255, 60, 0, 0.3); }
+    to { text-shadow: 0 0 30px rgba(255, 60, 0, 0.8); }
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 2px solid var(--cactus-red);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+
+.btn-main:hover {
+    background: var(--cactus-red);
+    box-shadow: 0 0 20px var(--cactus-red);
+}
+
+/* SECCIÓN ÁLBUMES */
+.albums-section { padding: 100px 5%; }
+
+.section-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.album-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.album-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--cactus-brown);
+    box-shadow: 0 10px 40px rgba(255, 60, 0, 0.4);
+}
+
+.album-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.album-card:hover img { transform: scale(1.05); }
+
+.btn-album {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--cactus-red);
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-album:hover {
+    background: var(--cactus-red);
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--cactus-red);
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+/* TOUR TABLE */
+.tour-section { padding: 50px 5% 100px; }
+
+.tour-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.tour-table th, .tour-table td {
+    padding: 20px;
+    border-bottom: 1px solid #222;
+    text-align: left;
+}
+
+.status { color: #555; font-size: 0.8rem; }
+.available { color: #00ff88; font-weight: bold; }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 60px;
+    background: #000;
+    color: #444;
+    font-size: 0.7rem;
+}
+
+/* SECCIÓN BIOGRAFÍA */
+.bio-section {
+    padding: 100px 10%;
+    background-color: #080808; 
+}
+
+.bio-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Para que en móviles se ponga uno debajo de otro */
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bio-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.bio-text strong {
+    color: var(--cactus-red);
+}
+
+.bio-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #888;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.bio-extra {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bio-extra img {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(1) contrast(1.2); /* Estética oscura */
+    border: 1px solid var(--cactus-brown);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bio-text h2 { text-align: center !important; }
+    .bio-stats { justify-content: center; }
+}
+
+.info-section {
+    padding: 50px 10%;
+    background-color: #000;
+}
+.info-container {
+    display: flex;
+    gap: 30px;
+}
+.info-box {
+    border-left: 3px solid var(--cactus-red);
+    padding-left: 20px;
+}
+
+
+h1, .header-content h1 {
+    
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 6rem;
+    color: #ffffff;
+    letter-spacing: 4px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Texto "CACTUS JACK" */
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #FF4500; /* Naranja vibrante */
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
